@@ -1,0 +1,118 @@
+* {
+    background-color: #eee;
+    color: #333;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 20pt;
+}
+
+header, header *{
+    background-color: #555;
+    color: #eee;
+}
+
+main {
+    width: 75%;
+    margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 30pt;
+}
+
+h1{
+    background: linear-gradient(to right, #555, #55b);
+}
+
+h2{
+    background: linear-gradient(to right, #eee, #7777f0);
+}
+
+a {
+    text-decoration: none;
+    color: #33f;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #33f;
+    font-weight: bolder;
+}
+
+p::first-letter {
+    font-size: 1.5em;
+}
+
+dl {
+    animation-name: dl-appear;
+    animation-duration: 4s;
+}
+
+dl *{
+    animation-name: dl-elements-appear;
+    animation-duration: 4s;
+}
+
+dt{
+    text-decoration: underline;
+}
+
+footer a {
+    display: inline-block;
+    width: 100px;
+}
+
+.mood-section div{
+    display: inline-block;
+    width: 45%;
+}
+
+@keyframes dl-appear{
+    0% {
+        margin-left: 100%;
+        background-color: #6f6fdd;
+    }
+    25% {
+        margin-left: 75%;
+        background-color: #8f8fdd;
+    }
+    50% {
+        margin-left: 50%;
+        background-color: #afafdd;
+    }
+    75% {
+        margin-left: 25%;
+        background-color: #cfcfdd;
+    }
+    100% {
+        margin-left: 5px;
+        background-color: #eee;
+    }
+}
+
+@keyframes dl-elements-appear{
+    0% {
+        background-color: #6f6fdd;
+    }
+    25% {
+        background-color: #8f8fdd;
+    }
+    50% {
+        background-color: #afafdd;
+    }
+    75% {
+        background-color: #cfcfdd;
+    }
+    100% {
+        background-color: #eee;
+    }
+}
+
+@media (max-width: 768px){
+    .mood-section div{
+        display: block;
+        width: 100%;
+    }
+}

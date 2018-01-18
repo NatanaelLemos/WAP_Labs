@@ -1,0 +1,32 @@
+@media (max-width: 800px){
+    .banner{
+        overflow: hidden;
+    }
+
+    .overview{
+        display: block;
+        float: initial;
+        width: 100%;
+    }
+
+    .reviews{
+        max-width: 100%;
+    }
+
+    .review{
+        width: 100%;
+        display: block;
+    }
+
+    .rating{
+        width: 100%;
+    }
+
+    .validators{
+        position: relative;
+        opacity: .5;
+        left: 0;
+        bottom: 0;
+        width: 100px;
+    }
+}

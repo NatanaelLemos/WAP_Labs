@@ -1,37 +1,155 @@
-*{
+/*#region fonts*/
+@font-face {
+    font-family: "Optimist";
+    font-weight: 400;
+    src: url("fonts/Optimist_W_Rg.woff2") format("woff2"), url("fonts/Optimist_W_Rg.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Optimist Bold";
+    font-weight: 400;
+    src: url("fonts/Optimist_W_Bd.woff2") format("woff2"), url("fonts/Optimist_W_Bd.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Optimist Light";
+    font-weight: normal;
+    font-style: normal;
+    src: url("fonts/Optimist_W_Lt.woff2") format("woff2"), url("fonts/Optimist_W_Lt.woff") format("woff");
+}
+/*#endregion*/
+
+/*#region override all*/
+* {
     margin: 0;
     padding: 0;
     font-size: 100%;
     position: relative;
+    font-family: "Optimist", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+/*#endregion*/
 
-header{
+/*#region header definitions*/
+header {
     text-align: center;
     padding: 10px;
 }
-    header img:first-of-type{
-        height: 50px;
-        width: auto;
-        vertical-align: middle;
-        border-right: 2px solid #ddd;
-    }
-    header img:last-of-type{
-        height: 35px;
-        width: auto;
+    header div > div {
+        display: inline-block;
+        width: 48%;
         vertical-align: middle;
     }
+        header div > div:nth-child(odd){
+            text-align: right;
+        }
+        header div > div:nth-child(even){
+            text-align: left;
+        }
+    header img {
+        padding: 15px;
+        width: auto;
+        vertical-align: middle;
+    }
+/*#endregion*/
 
-.banner{
-    background: url('quicksilver_2017-04-12-bg.jpg');
-    background-repeat: repeat;
-    padding: 10px;
+/*#region top logo*/
+.logo div:first-of-type img{
+    height: 50px;
+    border-right: 2px solid #aaa;
 }
-    .banner img{
+.logo div:last-of-type img{
+    height: 35px;
+}
+/*#endregion*/
+
+/*#region quicksilver banner*/
+.banner {
+    background: url('img/quicksilver_2017-04-12-bg.jpg');
+    background-repeat: repeat;
+    padding: 40px 0 130px 0;
+}
+    .banner img {
         height: 38px;
         width: auto;
+        border-right: 2px solid #aaa;
     }
-    .banner div{
+    .banner h1{
+        font-family: "Optimist Light", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        color: #fff;
+        max-width: 450px;
+    }
+/*#endregion*/
+
+/*#region menu bar*/
+.menu-bar {
+    margin: -107px auto 0 auto;
+    text-align: center;
+    font-family: "Optimist Light", sans-serif;
+    font-size: 16px;
+    width: 75%;
+}
+    .menu-bar > ul > li {
         display: inline-block;
-        width: calc(50% - 12px);
-        text-align: right;
+        list-style-type: none;
+        border-bottom: 2px dotted #aaa;
+        margin: 10px;
     }
+        .menu-bar > ul > li:hover {
+            border-color: #fff;
+        }
+    .menu-bar a {
+        text-decoration: none;
+        color: #fff;
+    }
+    .menu-bar button{
+        width: 100%;
+        background-color: #666;
+        opacity: .8;
+        border: 0 none;
+        color: #fff;
+        padding: 13px;
+    }
+    .menu-bar span{
+        font-family: "Optimist Light", sans-serif;
+        font-size: 20px;
+    }
+        .menu-bar span:last-of-type{
+            float: right;
+        }
+    .menu-bar dl{
+        background-color: #dfdfff;
+
+    }
+        .menu-bar dl *{
+            display: inline-block;
+            vertical-align: top;
+            padding: 15px 0;
+        }
+        .menu-bar dt {
+            width: 18%;
+            color: #0178a2;
+            text-align: center;
+        }
+        .menu-bar dd {
+            width: 28%;
+            text-align: left;
+        }
+/*#endregion*/
+
+/*#region main form*/
+form{
+    margin: 25px auto 0 auto;
+    width: 75%;
+}
+
+form h2{
+    text-align: center;
+    color: #0178a2;
+    font-family: "Optimist Light", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 10px;
+}
+/*#endregion*/

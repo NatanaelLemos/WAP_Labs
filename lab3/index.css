@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    position: relative;
+}
+
+header{
+    text-align: center;
+    padding: 10px;
+}
+    header img:first-of-type{
+        height: 50px;
+        width: auto;
+        vertical-align: middle;
+        border-right: 2px solid #ddd;
+    }
+    header img:last-of-type{
+        height: 35px;
+        width: auto;
+        vertical-align: middle;
+    }
+
+.banner{
+    background: url('quicksilver_2017-04-12-bg.jpg');
+    background-repeat: repeat;
+    padding: 10px;
+}
+    .banner img{
+        height: 38px;
+        width: auto;
+    }
+    .banner div{
+        display: inline-block;
+        width: calc(50% - 12px);
+        text-align: right;
+    }

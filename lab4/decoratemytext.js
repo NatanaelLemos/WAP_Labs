@@ -64,7 +64,7 @@ function startsWithConsonant(text){
     }
 
     var firstLetterAscii = text[0];
-    var vowels = ['a', 'e', 'i', 'o', 'u'];
+    var vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
     return vowels.indexOf(firstLetterAscii) < 0;
 }

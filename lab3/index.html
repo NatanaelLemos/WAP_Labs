@@ -5,6 +5,7 @@
         <title>Apply for a Capital One Card</title>
 
         <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="index.mobile.css" />
         <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
     </head>
     <body>
@@ -57,27 +58,28 @@
         <form action="#" method="post">
             <fieldset>
                 <legend>Personal Information</legend>
-                <img alt="card" title="card" src="img/QuicksilverCard_2017-04-12_sm.png" />
+                <img alt="card" title="card" src="img/QuicksilverCard_2017-04-12_sm.png" class="size-25"/>
                 <div class="row">
-                    <div class="input-box">
+                    <div class="input-box size-20">
                         <label for="first-name">FIRST NAME</label>
                         <input type="text" id="first-name" name="firstName" maxlength="16" size="16" pattern="[A-Za-z]{1,16}"/>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box size-10">
                         <label for="middle-name">MI</label>
                         <input type="text" id="middle-name" name="middleName" maxlength="1" size="1"  pattern="[A-Za-z]{0,1}"/>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box size-30">
                         <label for="last-name">LAST NAME</label>
                         <input type="text" id="last-name" name="lastName" maxlength="26" size="26" pattern="[A-Za-z]{1,26}"/>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-box">
+                    <div class="input-box size-30">
                         <label for="date-of-birth">DATE OF BIRTH</label>
                         <input type="date" id="date-of-birth" name="birthDate" maxlength="8" size="8" pattern="^\d\d\/\d\d\/\d\d\d\d$"/>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box"></div>
+                    <div class="input-box size-30">
                         <label for="ssn">SOCIAL SECURITY NUMBER</label>
                         <input type="text" id="ssn" name="ssn" maxlength="11" size="11" placeholder="___-__-____" pattern="^\d\d\d\-\d\d\-\d\d\d\d$"/>
                     </div>
@@ -107,11 +109,11 @@
                 <legend>Contact Information</legend>
 
                 <div class="row">
-                    <div class="input-box">
+                    <div class="input-box size-45">
                         <label for="residential-address">RESIDENTIAL ADDRESS (No PO Boxes or CMRA)</label>
                         <input type="text" id="residential-address" name="residentialAddress"  maxlength="255" size="70"/>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box size-45">
                         <label for="suite-apt">SUITE/APT. # (if applicable)</label>
                         <input type="text" id="suite-apt" name="suiteApt" maxlength="35" size="25"/>
                     </div>
@@ -120,11 +122,11 @@
                     <a href="#">+ Add mailing address (if different from residential address)</a>
                 </div>
                 <div class="row">
-                    <div class="input-box">
+                    <div class="input-box size-45">
                         <label for="email">EMAIL ADDRESS</label>
                         <input type="email" id="email" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" maxlength="255" size="50"/>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box size-45">
                         <label for="phone">PRIMARY PHONE NUMBER</label>
                         <input type="tel" id="phone" name="phone" pattern="\(\d{3}\)\d{3}\-\d{4}" maxlength="13" size="45"/>
                     </div>
@@ -136,7 +138,7 @@
                 <legend>Financial Information</legend>
 
                 <div class="row">
-                    <div class="input-box fill-width">
+                    <div class="input-box size-95">
                         <label for="employment-status">EMPLOYMENT STATUS</label>
                         <select>
                             <option>Employed</option>
@@ -149,17 +151,21 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-box">
+                    <div class="input-box size-45">
                         <label for="annual-income">TOTAL ANNUAL INCOME</label>
                         <input type="text" id="annual-income" name="annualIncome" maxlength="7" size="47" pattern="\d{1,3}\,?\d{0,3}"/>
+                        <p>
+                            Alimony, child support or separate maintenance income need not be revealed if you do not choose to have it
+                            considered as a basis for repaying this loan.
+                        </p>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box size-45">
                         <label for="monthly-rent">MONTHLY RENT/MORTGAGE</label>
                         <input type="text" id="monthly-rent" name="monthlyRent" maxlength="7" size="47" pattern="\d{1,3}\,?\d{0,3}"/>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-box">
+                    <div class="input-box size-45">
                         <label for="bank-accounts">DO YOU HAVE ANY BANK ACCOUNTS?</label>
                         <select>
                             <option>Checking and Savings</option>
@@ -168,7 +174,7 @@
                             <option>Neither</option>
                         </select>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box size-45">
                         <label for="credit-card-spend">CREDIT CARD SPEND PER MONTH</label>
                         <input type="text" id="monthly-rent" name="monthlyRent" maxlength="7" size="47" pattern="\d{1,3}\,?\d{0,3}"/>
                         <p>
@@ -177,7 +183,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-box fill-width">
+                    <div class="input-box size-95">
                         <label for="interested-blank-checks">IF OFFERED, WOULD YOU BE INTERESTED IN BLANK CHECKS TO USE FOR CASH ADVANCES? (Optional)</label>
                         <br />
                         <div class="input-box">
@@ -201,28 +207,38 @@
             <fieldset>
                 <legend>Additional Information</legend>
 
-                <div class="row">
+                <div class="row size-95">
                         We need your agreement to receive by electronic means only communications regarding your application,
                         including notice of our decision on your application and important account opening information regarding rates,
                         fees and other costs related to the credit card for which you are applying.
                         Please review the terms of our Electronic Communications Disclosure.
                 </div>
 
-                <div class="row">
-                    <div class="input-box">
-                        <label class="checkbox">
-                            <input type="checkbox" name="reviewed" />
-                            <span></span>
-                            <strong>
-                                I have reviewed and agree to the terms of the Electronic Communications Disclosure.
-                                I confirm that I have an active email address and the ability to access, view and print PDF files.
-                            </strong>
-                        </label>
-                    </div>
+                <div class="row size-95">
+                    <label class="checkbox">
+                        <input type="checkbox" name="reviewed" />
+                        <span></span>
+                        <strong>
+                            I have reviewed and agree to the terms of the Electronic Communications Disclosure.
+                            I confirm that I have an active email address and the ability to access, view and print PDF files.
+                        </strong>
+                    </label>
                 </div>
 
                 <hr />
             </fieldset>
+            <fieldset>
+                <legend>Important Disclosures</legend>
+                <a href="#">Download/Print</a>
+                <p class="size-90">
+                    Before you submit your application, please read through these Important Disclosures,
+                    which contain additional information about eligibility, rates, fees,
+                    and other costs, as applicable.
+                </p>
+
+                <hr />
+            </fieldset>
+
             <div class="submit">
                 <button type="submit">Continue</button>
             </div>

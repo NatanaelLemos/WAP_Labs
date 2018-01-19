@@ -25,18 +25,18 @@
         <!-- Your UI controls go here -->
         <fieldset>
             <legend>Text</legend>
-            <textarea id="text" cols="30" rows="4"/>
+            <textarea id="text" cols="30" rows="4"></textarea>
         </fieldset>
 
-<!-- The first task is to expand decoratemytext.html by adding UI controls. 
-    Add HTML code for the following:
-
-A field for users to enter large (multi-line) amounts of text.
-It should be 4 rows by 30 columns in size.
-Wrap it in a bordered field set box with the label "Text".
-Add a second bordered field set box labeled "Decoration" that contains the following controls:
-A button labeled: Bigger Decorations!
-A checkbox labeled "Bling"
-NOTE: Controls are sometimes used in forms; but you must not use the form tag on your page. -->
+        <fieldset>
+            <legend>Decoration</legend>
+            <button onclick="onBiggerDecorations()">Bigger Decorations!</button>
+            <button onclick="onPigLatin()">Igpay Atinlay</button>
+            <button onclick="onMalkovitch()">Malkovitch</button>
+            <label>
+                <input id="bling" type="checkbox" onchange="onBling()"/> Bling
+            </label>
+        </fieldset>
+        <script src="decoratemytext.js"></script>
 	</body>
 </html>

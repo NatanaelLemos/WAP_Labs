@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ASCIImation</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <h1>CS472: ASCII Animation Viewer</h1>
+
+        <textarea cols="80" rows="20" id="txtAnimation"></textarea>
+
+        <fieldset>
+            <legend>Play Controls:</legend>
+
+            <button id="btnStart">Start</button>
+            <button id="btnStop">Stop</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Animation:</legend>
+
+            <select id="ddlAnimations"></select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Size:</legend>
+
+            <select id="ddlSizes">
+                <option value="7">Tiny</option>
+                <option value="10">Small</option>
+                <option value="12" selected>Medium</option>
+                <option value="16">Large</option>
+                <option value="24">Extra Large</option>
+                <option value="32">XXL</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Speed:</legend>
+
+            <label>
+                <input type="checkbox" id="ckbTurbo"/> Turbo
+            </label>
+        </fieldset>
+
+        <a href="https://webster.cs.washington.edu/jslint/?referer">
+            <img src="https://webster.cs.washington.edu/w3c-js.png" alt="Valid JS" />
+        </a>
+
+        <link rel="stylesheet" href="ascii.css" />
+        <script src="animations.js"></script>
+        <script src="ascii.js"></script>
+    </body>
+</html>

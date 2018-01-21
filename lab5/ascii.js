@@ -25,7 +25,7 @@ class AnimationFactory {
         const result = [];
 
         for(const [idx, line] of textLines.entries()){
-            if(idx % frameSize == 0){
+            if(idx % frameSize === 0){
                 result.push(line);
             }else{
                 result[result.length -1] += `\n${line}`;
@@ -98,7 +98,7 @@ window.onload = () => {
     fillAnimationsDropDown();
     enableControls(false);
     attachEvents();
-}
+};
 
 function fillAnimationsDropDown(){
     const added = [];

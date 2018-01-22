@@ -2,40 +2,6 @@
 /* jshint esversion: 6 */
 /* jshint browser: true */
 
-class AnimationFactory {
-    static getAnimation(style) {
-        const frameSizes = {
-            blank: 5,
-            custom: 5,
-            exercise: 4,
-            juggler: 5,
-            bike: 5,
-            dive: 21
-        };
-
-        return {
-            animation: ANIMATIONS[style],
-            frameSize: frameSizes[style],
-            style: style
-        };
-    }
-
-    static splitFrames(animationFrames, frameSize) {
-        const textLines = animationFrames.split("\n");
-        const result = [];
-
-        for(const [idx, line] of textLines.entries()){
-            if(idx % frameSize === 0){
-                result.push(line);
-            }else{
-                result[result.length -1] += `\n${line}`;
-            }
-        }
-
-        return result;
-    }
-}
-
 class Animation {
     constructor(turbo = false, style = 'blank', size = 12){
         this.turbo = turbo;
@@ -44,15 +10,14 @@ class Animation {
     }
 
     set style (value){
-        this._animation = AnimationFactory.getAnimation(value);
-        document.getElementById("txtAnimation").value = this._animation.animation;
+        document.getElementById("txtAnimation").value = ANIMATIONS[value];
     }
 
     set turbo (value) {
         this._turbo = value;
 
         if(this._interval){
-            this.stop();
+            clearInterval(this._interval);
             this._interval = this._animate();
         }
     }
@@ -62,8 +27,14 @@ class Animation {
     }
 
     start() {
-        this._frames = AnimationFactory.splitFrames(document.getElementById("txtAnimation").value, this._animation.frameSize);
+        this._previousText = document.getElementById("txtAnimation").value;
+        this._frames = this._splitFrames(this._previousText);
         this._interval = this._animate();
+    }
+
+    _splitFrames(animationFrames) {
+        const textLines = animationFrames.split("=====\n");
+        return textLines;
     }
 
     _animate() {
@@ -81,6 +52,7 @@ class Animation {
     stop() {
         clearInterval(this._interval);
         this._interval = null;
+        document.getElementById("txtAnimation").value = this._previousText;
     }
 }
 

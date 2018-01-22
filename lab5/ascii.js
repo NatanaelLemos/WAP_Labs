@@ -56,54 +56,56 @@ class Animation {
     }
 }
 
-const animation = new Animation();
+(() => {
+    const animation = new Animation();
 
-const controls = {
-    ddlAnimations: document.getElementById("ddlAnimations"),
-    ddlSizes: document.getElementById("ddlSizes"),
-    btnStart: document.getElementById("btnStart"),
-    btnStop: document.getElementById("btnStop"),
-    ckbTurbo: document.getElementById("ckbTurbo")
-};
-
-window.onload = () => {
-    fillAnimationsDropDown();
-    enableControls(false);
-    attachEvents();
-};
-
-function fillAnimationsDropDown(){
-    const added = [];
-
-    for (let [idx, animationStyle] of Object.keys(ANIMATIONS).entries()) {
-        animationStyle = animationStyle.toLowerCase();
-
-        if(added.indexOf(animationStyle) >= 0){ continue; }
-        added.push(animationStyle);
-
-        controls.ddlAnimations.innerHTML += `<option value="${animationStyle}">${animationStyle}</option>`;
-        if(idx == 0){ animation.style = animationStyle; }
-    }
-}
-
-function enableControls(isPlaying){
-    controls.btnStart.disabled = isPlaying;
-    controls.btnStop.disabled = !isPlaying;
-    controls.ddlAnimations.disabled = isPlaying;
-}
-
-function attachEvents(){
-    controls.btnStart.onclick = () => {
-        enableControls(true);
-        animation.start();
+    const controls = {
+        ddlAnimations: document.getElementById("ddlAnimations"),
+        ddlSizes: document.getElementById("ddlSizes"),
+        btnStart: document.getElementById("btnStart"),
+        btnStop: document.getElementById("btnStop"),
+        ckbTurbo: document.getElementById("ckbTurbo")
     };
 
-    controls.btnStop.onclick = () => {
+    window.onload = () => {
+        fillAnimationsDropDown();
         enableControls(false);
-        animation.stop();
+        attachEvents();
     };
 
-    controls.ckbTurbo.onchange = () => animation.turbo = controls.ckbTurbo.checked;
-    controls.ddlAnimations.onchange = () => animation.style = controls.ddlAnimations.value;
-    controls.ddlSizes.onchange = () => animation.size = controls.ddlSizes.value;
-}
+    function fillAnimationsDropDown(){
+        const added = [];
+
+        for (let [idx, animationStyle] of Object.keys(ANIMATIONS).entries()) {
+            animationStyle = animationStyle.toLowerCase();
+
+            if(added.indexOf(animationStyle) >= 0){ continue; }
+            added.push(animationStyle);
+
+            controls.ddlAnimations.innerHTML += `<option value="${animationStyle}">${animationStyle}</option>`;
+            if(idx == 0){ animation.style = animationStyle; }
+        }
+    }
+
+    function enableControls(isPlaying){
+        controls.btnStart.disabled = isPlaying;
+        controls.btnStop.disabled = !isPlaying;
+        controls.ddlAnimations.disabled = isPlaying;
+    }
+
+    function attachEvents(){
+        controls.btnStart.onclick = () => {
+            enableControls(true);
+            animation.start();
+        };
+
+        controls.btnStop.onclick = () => {
+            enableControls(false);
+            animation.stop();
+        };
+
+        controls.ckbTurbo.onchange = () => animation.turbo = controls.ckbTurbo.checked;
+        controls.ddlAnimations.onchange = () => animation.style = controls.ddlAnimations.value;
+        controls.ddlSizes.onchange = () => animation.size = controls.ddlSizes.value;
+    }
+})();

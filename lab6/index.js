@@ -7,7 +7,7 @@
 
     window.onload = () => {
         document.getElementById("submit").onclick = () => {
-            const newAccount = Account();
+            const newAccount = AccountFactory().createAccount();
             accountInfoList.push(newAccount);
             displayList(accountInfoList);
         };
@@ -23,9 +23,17 @@
     }
 })();
 
-function Account(){
+function AccountFactory(){
+    let name, deposit;
     return {
-        name: document.getElementById("accountName").value,
-        deposit: document.getElementById("deposit").value
-    };
+        createAccount: () => {
+            this.name = document.getElementById("accountName").value;
+            this.deposit = document.getElementById("deposit").value;
+
+            return {
+                name: this.name,
+                deposit: this.deposit
+            };
+        }
+    }
 }

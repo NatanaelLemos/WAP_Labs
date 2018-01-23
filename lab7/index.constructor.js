@@ -31,11 +31,11 @@
 
         const bikeList = [
             new Bicycle(),
-            new MountainBike(new Bicycle()),
+            new MountainBike(),
             new Bicycle(),
-            new MountainBike(new Bicycle()),
+            new MountainBike(),
             new Bicycle(),
-            new MountainBike(new Bicycle())
+            new MountainBike()
         ];
 
         for (let i = 0; i < 10; i ++ ) {

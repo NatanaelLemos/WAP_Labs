@@ -1,37 +1,45 @@
 /* jshint esversion: 6 */
 /* jshint browser: true */
-var outsideArea;
-
 $(() => {
     "use strict";
 
-    outsideArea = $('body *').not('#maze, #maze *');
+    const maze = $('#maze');
     const boundary = $('.boundary');
     const start = $('#start');
     const end = $('#end');
     const status = $('#status');
 
-    boundary.mouseover(youLose);
-    outsideArea.mouseover(function(){
-        
-        if(boundary.hasClass('youlose')){
-            return;
+    const game = {
+        playing: false,
+        lose: () => {
+            if(!game.playing) {
+                return;
+            }
+
+            boundary.addClass('youlose');
+            game.playing = false;
+            status.text('You lose');
+        },
+        start: () => {
+            game.playing = true;
+            boundary.removeClass('youlose');
+        },
+        end: () => {
+            if(!game.playing){
+                return;
+            }
+
+            if(boundary.hasClass('youlose')){
+                return;
+            }
+
+            game.playing = false;
+            status.text('You win');
         }
-        console.log(this);
-        youLose();
-    });
+    };
 
-    start.click(() => boundary.removeClass('youlose'));
-
-    end.mouseover(() => {
-        if(boundary.hasClass('youlose')){
-            return;
-        }
-        status.text('You win');
-    });
-
-
-    function youLose() {
-        boundary.addClass('youlose');
-    }
+    maze.mouseleave(game.lose);
+    boundary.mouseover(game.lose);
+    start.click(game.start);
+    end.mouseover(game.end);
 });

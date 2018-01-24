@@ -8,17 +8,23 @@
     const player = new Player();
 
     window.onload = () => {
+        bindEvents();
+        inputBoard.focus();
+
+        setInterval(() => {
+            drawBoard.innerHTML = player.draw();
+        }, 10);
+    };
+
+    function bindEvents() {
         const inputBoard = document.getElementById('inputBoard');
         inputBoard.onkeydown = movePlayer;
 
         inputBoard.onblur = () => inputBoard.focus();
         document.querySelector('*').onfocus = () => inputBoard.focus();
-        inputBoard.focus();
-    };
+    }
 
     function movePlayer(k) {
-        console.log(k.key);
-
         switch(k.key.toUpperCase()){
             case 'ARROWUP':
                 player.x--;
@@ -27,9 +33,5 @@
                 player.x++;
                 break;
         }
-
-        console.log(player.draw());
-        console.log(player.x);
-        drawBoard.innerHTML = player.draw();
     }
 })();

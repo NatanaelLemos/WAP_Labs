@@ -12,26 +12,20 @@ $(() => {
     const game = {
         playing: false,
         lose: () => {
-            if(!game.playing) {
-                return;
-            }
+            if(!game.playing) return;
 
-            boundary.addClass('youlose');
             game.playing = false;
+            boundary.addClass('youlose');
             status.text('You lose');
         },
         start: () => {
-            game.playing = true;
             boundary.removeClass('youlose');
+            status.text('You are playing, enjoy!!!!!');
+            game.playing = true;
         },
         end: () => {
-            if(!game.playing){
-                return;
-            }
-
-            if(boundary.hasClass('youlose')){
-                return;
-            }
+            if(!game.playing) return;
+            if(boundary.hasClass('youlose')) return;
 
             game.playing = false;
             status.text('You win');

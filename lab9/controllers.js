@@ -21,15 +21,9 @@ class ControllerBase {
         const observers = this._observers;
 
         $.get(root + url, data)
-            .done((data) => {
-                this._view.fill(data, observers);
-            })
-            .fail((xhr, err, status) => {
-                alert(`Error: (${status}) ${err}`);
-            })
-            .always(() => {
-                this._view.hideLoading();
-            });
+            .done((data) => this._view.fill(data, observers))
+            .fail((xhr, err, status) => alert(`Error: (${status}) ${err}`))
+            .always(this._view.hideLoading);
     }
 
     subscribe(observer) {

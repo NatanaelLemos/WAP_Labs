@@ -22,9 +22,65 @@
                 <ul id="comments"></ul>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <div id="user" class="details hide">
+                    <div>
+                        <label>Name:</label>
+                        <p id="name"></p>
+                    </div>
+                    <div>
+                        <label>Username:</label>
+                        <p id="username"></p>
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <p id="email"></p>
+                    </div>
+                    <div>
+                        <label>Phone:</label>
+                        <p id="phone"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div id="post" class="details hide">
+                    <div>
+                        <label>Title:</label>
+                        <p id="title"></p>
+                    </div>
+                    <div>
+                        <label>Body:</label>
+                        <p id="body"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div id="comment" class="details hide">
+                    <div>
+                        <label>Name:</label>
+                        <p id="cName"></p>
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <p id="cEmail"></p>
+                    </div>
+                    <div>
+                        <label>Body:</label>
+                        <p id="cBody"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
-        <script src="jquery.local.js"></script>
+        <div class="loading hide">
+            &nbsp;
+            <img src="loading.gif" alt="Loading" />
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="controllers.js"></script>
+        <script src="views.js"></script>
         <script src="index.js"></script>
     </body>
 </html>

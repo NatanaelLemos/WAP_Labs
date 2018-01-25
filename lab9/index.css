@@ -49,3 +49,52 @@ li:hover {
     padding: 5px;
     vertical-align: top;
 }
+
+.details {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 5px;
+}
+    .details div {
+        vertical-align: top;
+    }
+    .details label {
+        display: block;
+        font-size: .7em;
+        font-weight: bold;
+    }
+    .details p {
+        display: block;
+        padding-left: 3px;
+    }
+    .details div {
+        display: inline-block;
+        width: 49%;
+    }
+
+.hide {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.loading {
+    background-color: #111;
+    position: absolute;
+    opacity: .6;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 256px;
+    min-width: 256px;
+    z-index: 999999;
+}
+    .loading img {
+        background-color: transparent;
+        position: absolute;
+        top: calc(50% - 128px);
+        left: calc(50% - 128px);
+    }

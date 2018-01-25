@@ -4,24 +4,22 @@
 $(() => {
     "use strict";
 
-    const users = $('#users');
-    const posts = $('#posts');
-    const comments = $('#comments');
-    const root = 'http://jsonplaceholder.typicode.com';
+    const userView = new UserView();
+    const userCtrl = new UserController(userView);
 
-    const userCtrl = {
-        get: (id) => {
-            const data = id ? { 'id' : id } : null;
-            $.get(root + '/users', data)
-                .done((data) => {
-                    
-                })
-                .fail((xhr, err, status) => {
-                    alert(`Error: (${status}) ${err}`);
-                })
-                .always(() => {
+    const postView = new PostView();
+    const postCtrl = new PostController(postView);
 
-                });
-        }
-    };
+    const commentView = new CommentView();
+    const commentCtrl = new CommentController(commentView);
+
+    userCtrl.subscribe(userView.details);
+    userCtrl.subscribe(postCtrl.get);
+
+    postCtrl.subscribe(postView.details);
+    postCtrl.subscribe(commentCtrl.get);
+
+    commentCtrl.subscribe(commentView.details);
+
+    userCtrl.get();
 });

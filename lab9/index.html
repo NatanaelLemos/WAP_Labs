@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Blog posts</title>
+
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <h1>Blog posts</h1>
+        <div class="row">
+            <div class="col">
+                <h2>Users</h2>
+                <ul id="users"></ul>
+            </div>
+            <div class="col">
+                <h2>Posts</h2>
+                <ul id="posts"></ul>
+            </div>
+            <div class="col">
+                <h2>Comments</h2>
+                <ul id="comments"></ul>
+            </div>
+        </div>
+
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+        <script src="jquery.local.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
+
+
+Suppose we have a service http://jsonplaceholder.typicode.com about blogs.
+• Write a page that processes this JSON blog data.
+• To display user information /users/1
+• Display all posts from selected user /posts?userId=1
+• Display all comments from selected post /comments?postId=1
+• Create one page with input form to take userId from the browser
+• Display user name and email and address and all posts belongs to this userId
+• For every post, you need to show a button (show comments) once clicked you need
+to show all comments for the specific post.
+• The trick is to hide postId in data-attribute in each post. (HTML5 compatible)
+• To display the comments you need to create the output comment elements and
+append them to the DOM (faster, memory efficient)
+• You may need to use $(DOM).on() to attach event handler with functions to newly
+created elements

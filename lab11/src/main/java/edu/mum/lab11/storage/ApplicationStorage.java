@@ -39,6 +39,7 @@ public class ApplicationStorage {
                 break;
             case Cookie:
                 setCookieValue(key, value);
+                break;
             default:
                 setSessionValue(key, value);
                 break;

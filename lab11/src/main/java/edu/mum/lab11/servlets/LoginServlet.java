@@ -19,10 +19,12 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username = ApplicationStorage
-                            .getInstance(request, response)
-                            .getValue(StorageType.Cookie, "username");
+                .getInstance(request, response)
+                .getValue(StorageType.Cookie, "username");
 
-        if(username != null && !username.isEmpty()){
+        if(username == null || username.isEmpty()){
+            username = "";
+        } else{
             username = "?username=" + username;
         }
 

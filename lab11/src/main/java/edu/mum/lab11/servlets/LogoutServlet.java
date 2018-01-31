@@ -13,11 +13,12 @@ import java.io.IOException;
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ApplicationStorage.getInstance(request).cleanValue(StorageType.Session, "user");
-        response.sendRedirect("index.jsp");
+        ApplicationStorage storage = ApplicationStorage.getInstance(request, response);
+        storage.clean(StorageType.Session);
+        response.sendRedirect("login");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("index.html");
     }
 }

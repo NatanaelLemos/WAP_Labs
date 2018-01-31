@@ -14,6 +14,14 @@ import java.util.List;
 public class ContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent arg0) {
+        List<User> users = getUsersDb();
+
+        ApplicationStorage
+                .getInstance(arg0.getServletContext())
+                .setValue(StorageType.Application, "users", users);
+    }
+
+    private List<User> getUsersDb() {
         List<User> users = new ArrayList<>();
         User u = new User();
         u.setUsername("u1");
@@ -30,12 +38,7 @@ public class ContextListener implements ServletContextListener {
         u.setPassword("p3");
         users.add(u);
 
-        ApplicationStorage
-            .getInstance(arg0.getServletContext())
-            .setValue(
-                StorageType.Application,
-                "users",
-                users);
+        return users;
     }
 
     @Override

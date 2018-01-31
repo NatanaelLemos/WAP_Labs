@@ -27,19 +27,17 @@ public class LoginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        User user = ApplicationStorage.getInstance(request).getValue(
-                StorageType.Session,
-                "user",
-                User.class
-        );
+        User user = ApplicationStorage
+                        .getInstance(request, response)
+                        .getValue(StorageType.Session, "user");
 
         if ((user == null) && (!request.getServletPath().startsWith("/login"))) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login");
             return;
         }
 
-        if((user == null) && request.getServletPath().startsWith("/login")){
-            response.sendRedirect("index.jsp");
+        if((user != null) && request.getServletPath().startsWith("/login")){
+            response.sendRedirect("index.html");
             return;
         }
 

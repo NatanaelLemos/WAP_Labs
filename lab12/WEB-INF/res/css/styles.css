@@ -1,0 +1,94 @@
+* {
+    font-family: sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.login-form {
+    position: fixed;
+    left: calc(50% - 220px);
+    top: calc(50% - 120px);
+    width: 400px;
+    height: 200px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.login-form > div {
+    margin-bottom: 8px;
+}
+
+.input-box {
+    display: block;
+    vertical-align: top;
+}
+
+.input-box * {
+    display: block;
+    width: 98%;
+}
+
+.input-box label {
+    font-size: .8em;
+    padding-left: 2px;
+}
+
+.input-box input,
+.input-box select {
+    background-color: #fff;
+    border: 1px solid #666;
+    border-radius: 3px;
+    padding: 8px;
+}
+
+.radio-box {
+    white-space: nowrap;
+}
+
+.radio, .checkbox {
+    display: inline !important;
+    padding-left: 31px;
+    padding-top: 5px;
+    margin-right: 15px;
+
+}
+.radio input,
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.radio span,
+.checkbox span {
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #666;
+}
+.radio span {
+    border-radius: 100%;
+}
+.radio input:checked ~ span,
+.checkbox input:checked ~ span {
+    background-color: #25AF48;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block;
+    box-shadow: none;
+    border: 1px solid #333;
+}
+
+button[type="submit"] {
+    background-color: #25AF48;
+    color: #f5f5f5;
+}

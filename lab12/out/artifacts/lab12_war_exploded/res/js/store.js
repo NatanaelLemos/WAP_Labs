@@ -105,6 +105,6 @@ $(() => {
     let totalCart = 0;
     function incrementTotalCart(value){
         totalCart += value;
-        $('#totalCart').html(totalCart);
+        $('#totalCart').val(totalCart);
     }
 });

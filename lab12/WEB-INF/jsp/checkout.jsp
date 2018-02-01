@@ -38,10 +38,37 @@
 </c:forEach>
         </tbody>
     </table>
-    <div>
-        Total:
-        <span id="totalCart"></span>
-    </div>
+
+    <form action="/checkout" method="post">
+        <div>
+            Total:
+            <input type="text" readonly id="totalCart" name="totalCart" />
+        </div>
+        <fieldset>
+            <legend>Shipping information</legend>
+            <div class="input-box">
+                <label for="address1">Address 1:</label>
+                <input type="text" id="address1" name="address1" />
+            </div>
+            <div class="input-box">
+                <label for="address2">Address 2:</label>
+                <input type="text" id="address2" name="address2" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Payment information</legend>
+            <div class="input-box">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" pattern="^\d{4}\-\d{4}\-\d{4}\-\d{4}$"/>
+            </div>
+            <div class="input-box">
+                <label for="cardName">Name on Card:</label>
+                <input type="text" id="cardName" name="cardName" />
+            </div>
+        </fieldset>
+
+        <button type="submit">Confirm</button>
+    </form>
 </main>
 
 <script src="<c:url value='http://code.jquery.com/jquery-3.3.1.min.js'/>"

@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
         }
 
         storage.setValue(StorageType.Session, "user", user);
-        response.sendRedirect("home");
+        response.sendRedirect("checkout");
     }
 
     private User GetUserFromRequest(HttpServletRequest request) {

@@ -64,7 +64,7 @@ public class CartServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ApplicationStorage storage = ApplicationStorage.getInstance(request, response);
 
-        int prodId = Integer.parseInt(request.getQueryString().replace("id=",""));
+        int prodId = Integer.parseInt(request.getParameter("id"));
 
         List<CartItem> cart = storage.getValue(StorageType.Session, "cart");
         cart.remove(cart.stream().filter(c -> c.getProductId() == prodId).findFirst().get());

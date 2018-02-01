@@ -21,7 +21,7 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int prodId = Integer.parseInt(request.getQueryString().replace("id=",""));
+        int prodId = Integer.parseInt(request.getParameter("id"));
         List<Product> productsStore = ApplicationStorage.getInstance(request, response).getValue(StorageType.Application, "products");
 
         Product product = productsStore.stream().filter(p -> p.getId() == prodId).findFirst().get();

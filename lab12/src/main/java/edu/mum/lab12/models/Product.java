@@ -5,7 +5,9 @@ import java.util.Currency;
 public class Product {
     private int id;
     private String name;
-    private Currency price;
+    private double price;
+    private String description;
+    private String img;
 
     public int getId() {
         return id;
@@ -23,11 +25,27 @@ public class Product {
         this.name = name;
     }
 
-    public Currency getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Currency price) {
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getDescription(){
+        return this.description;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+
+    public String getImg(){
+        return this.img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

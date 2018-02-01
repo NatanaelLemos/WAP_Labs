@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "myFilter", urlPatterns = { "/*" })
+@WebFilter(filterName = "myFilter", urlPatterns = { "/checkout" })
 public class LoginFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {
@@ -27,13 +27,12 @@ public class LoginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        String urlPath = request.getServletPath();
         User user = ApplicationStorage
                 .getInstance(request, response)
                 .getValue(StorageType.Session, "user");
 
-        if(urlPath.equals("/")){
-            response.sendRedirect("/home");
+        if (user == null) {
+            response.sendRedirect("/login");
             return;
         }
 

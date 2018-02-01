@@ -1,4 +1,4 @@
-package edu.mum.lab12.servlets;
+package edu.mum.lab12.controllers;
 
 import edu.mum.lab12.storage.ApplicationStorage;
 import edu.mum.lab12.storage.StorageType;
@@ -14,10 +14,12 @@ public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ApplicationStorage storage = ApplicationStorage.getInstance(request, response);
         storage.clean(StorageType.Session);
-        response.sendRedirect("login");
+        response.sendRedirect("home");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ApplicationStorage storage = ApplicationStorage.getInstance(request, response);
+        storage.clean(StorageType.Session);
         response.sendRedirect("home");
     }
 }

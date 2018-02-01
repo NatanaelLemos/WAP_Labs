@@ -1,4 +1,4 @@
-package edu.mum.lab12.servlets;
+package edu.mum.lab12.controllers;
 
 import edu.mum.lab12.models.User;
 import edu.mum.lab12.storage.ApplicationStorage;
@@ -20,7 +20,9 @@ public class LoginServlet extends HttpServlet {
                             .getInstance(request, response)
                             .getValue(StorageType.Cookie, "username");
 
-        if(username != null && !username.isEmpty()){
+        if(username == null || username.isEmpty()){
+            request.setAttribute("username", "");
+        }else{
             request.setAttribute("username", username);
         }
 

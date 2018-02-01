@@ -1,0 +1,14 @@
+.login-form {
+    position: fixed;
+    left: calc(50% - 220px);
+    top: calc(50% - 120px);
+    width: 400px;
+    height: 200px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.login-form > div {
+    margin-bottom: 8px;
+}

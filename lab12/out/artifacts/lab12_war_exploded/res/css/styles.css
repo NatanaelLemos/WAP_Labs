@@ -8,43 +8,38 @@
     color: #333;
 }
 
-.login-form {
-    position: fixed;
-    left: calc(50% - 220px);
-    top: calc(50% - 120px);
-    width: 400px;
-    height: 200px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 20px;
+main {
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.login-form > div {
-    margin-bottom: 8px;
+h1{
+    font-size: 2em;
+}
+h2{
+    font-size: 1.5em;
 }
 
 .input-box {
     display: block;
     vertical-align: top;
 }
-
-.input-box * {
-    display: block;
-    width: 98%;
-}
-
-.input-box label {
-    font-size: .8em;
-    padding-left: 2px;
-}
-
-.input-box input,
-.input-box select {
-    background-color: #fff;
-    border: 1px solid #666;
-    border-radius: 3px;
-    padding: 8px;
-}
+    .input-box * {
+        display: block;
+        width: 98%;
+    }
+    .input-box label {
+        font-size: .8em;
+        padding-left: 2px;
+    }
+    .input-box input,
+    .input-box select {
+        background-color: #fff;
+        border: 1px solid #666;
+        border-radius: 3px;
+        padding: 8px;
+    }
 
 .radio-box {
     white-space: nowrap;
@@ -57,28 +52,28 @@
     margin-right: 15px;
 
 }
-.radio input,
-.checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-.radio span,
-.checkbox span {
-    position: absolute;
-    top: 3px;
-    left: 1px;
-    height: 20px;
-    width: 20px;
-    border: 2px solid #666;
-}
-.radio span {
-    border-radius: 100%;
-}
-.radio input:checked ~ span,
-.checkbox input:checked ~ span {
-    background-color: #25AF48;
-}
+    .radio input,
+    .checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .radio span,
+    .checkbox span {
+        position: absolute;
+        top: 3px;
+        left: 1px;
+        height: 20px;
+        width: 20px;
+        border: 2px solid #666;
+    }
+    .radio span {
+        border-radius: 100%;
+    }
+    .radio input:checked ~ span,
+    .checkbox input:checked ~ span {
+        background-color: #25AF48;
+    }
 
 button {
     padding: 5px 10px;
@@ -87,8 +82,129 @@ button {
     box-shadow: none;
     border: 1px solid #333;
 }
+    button[type="submit"] {
+        background-color: #25AF48;
+        color: #f5f5f5;
+    }
 
-button[type="submit"] {
-    background-color: #25AF48;
-    color: #f5f5f5;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 999999;
+    background: linear-gradient(#99bbdd, #f5f5f5);
+    border-bottom: 1px solid #333;
+    border-radius: 0 0 20px 20px;
 }
+    header * {
+        background-color: transparent;
+    }
+    header > a{
+        text-decoration: none;
+        float: left;
+        padding: 4px 0 0 12px;
+    }
+    header .shopping-cart {
+        float: right;
+        padding: 6px 12px 0 0;
+        font-size: 1.7em;
+    }
+        header .shopping-cart span {
+            font-size: .6em;
+        }
+
+.logout {
+    float: right;
+    margin: 12px 30px 0 0;
+}
+
+.featured {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+    .featured, .featured * {
+        background-color: transparent;
+    }
+
+    .featured img {
+        max-height: 400px;
+        max-width: 100%;
+    }
+
+    .featured button {
+        float: right;
+        display: inline;
+        z-index: 999;
+    }
+
+.price {
+    color: #25AF48;
+    font-weight: bold;
+}
+
+.product {
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 5px;
+}
+    .product button {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+.hide {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.loading {
+    background-color: #111;
+    position: absolute;
+    opacity: .6;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 256px;
+    min-width: 200px;
+    z-index: 999999;
+}
+    .loading img {
+        background-color: transparent;
+        position: absolute;
+        top: calc(50% - 100px);
+        left: calc(50% - 100px);
+        width: 200px;
+    }
+
+table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+thead th{
+    background-color: #99bbdd;
+}
+tr:nth-of-type(even) td{
+    background-color: #ccd;
+}
+tr { width: 100%; }
+    tr td:nth-of-type(1){ width:  50%; }
+    tr td:nth-of-type(2){ width:  10%; }
+    tr td:nth-of-type(3){ width:  15%; }
+    tr td:nth-of-type(4){ width:  15%; }
+    tr td:nth-of-type(5){ width:  10%; }
